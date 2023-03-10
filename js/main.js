@@ -11,4 +11,4 @@ getRandomInt(0, 100);
 function checkStr(str, maxLen) {
   return maxLen >= String(str).length;
 }
-checkStr("Привет", 2);
+checkStr('Привет', 2);
