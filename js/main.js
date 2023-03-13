@@ -13,7 +13,7 @@ function checkStr(str, maxLen) {
 checkStr('Привет', 2);
 
 function getSignature() {
-  let variants = ['Its a beautiful life, oh oh-oh-oh', 'You are my strange addiction',
+  const variants = ['Its a beautiful life, oh oh-oh-oh', 'You are my strange addiction',
     'Am I falling in love with the one that could break my heart?', 'Kiss, kiss and make up',
     'Dont mess up my tempo', 'If you love me, let me hear you', 'I live for the applause, applause, applause',
     'Take me to church Ill worship like a dog at the shrine of your lies', 'I want you to cry for me',
@@ -39,4 +39,4 @@ function getObjects(limit) {
   return objects;
 }
 
-console.log(getObjects(25));
+getObjects(25);
