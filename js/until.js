@@ -4,13 +4,9 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (upper - lower + 1) + lower);
 }
 
-getRandomInt(0, 100);
-
 function checkStr(str, maxLen) {
   return maxLen >= String(str).length;
 }
-
-checkStr('Привет', 2);
 
 function getSignature() {
   const variants = ['Its a beautiful life, oh oh-oh-oh', 'You are my strange addiction',

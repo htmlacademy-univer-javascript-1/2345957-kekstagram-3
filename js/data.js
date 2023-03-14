@@ -1,4 +1,4 @@
-import {getSignature, getRandomInt} from "./until";
+import {getSignature, getRandomInt} from "./until.js";
 
 function getObject(num) {
   return {
@@ -17,8 +17,6 @@ function getObjects(limit) {
   }
   return objects;
 }
-
-getObjects(25);
 
 export {
   getObject,

@@ -1,2 +1,2 @@
-import "./data";
-import "./until";
+import "./data.js";
+import "./until.js";
