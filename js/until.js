@@ -21,4 +21,4 @@ export {
   getRandomInt,
   checkStr,
   getSignature
-}
+};

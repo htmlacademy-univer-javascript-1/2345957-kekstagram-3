@@ -21,4 +21,4 @@ function getObjects(limit) {
 export {
   getObject,
   getObjects
-}
+};
