@@ -1,4 +1,4 @@
-import {getSignature, getRandomInt} from "./until.js";
+import {getSignature, getRandomInt} from './until.js';
 
 function getObject(num) {
   return {
