@@ -16,4 +16,4 @@ function renderingThumbnail(getObjects) {
   container.appendChild(usersPicturesFragment);
 }
 
-export {renderingThumbnail}
+export {renderingThumbnail};
