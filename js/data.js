@@ -12,7 +12,7 @@ function getObject(num) {
 
 function getObjects(limit) {
   const objects = [];
-  for (let i = 1; i <= limit; i++) {
+  for (let i = 0; i < limit; i++) {
     objects.push(getObject(i));
   }
   return objects;
