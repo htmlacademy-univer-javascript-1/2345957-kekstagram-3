@@ -1,6 +1,6 @@
 const container = document.querySelector('.pictures');
 const usersPictureTemplate = document.querySelector('#picture').content;
-
+//Задание 7 часть 2
 function renderingThumbnail(getObjects) {
   const usersPicturesFragment = document.createDocumentFragment();
 
