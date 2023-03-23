@@ -17,8 +17,11 @@ function getSignature() {
   return variants[getRandomInt(0, variants.length - 1)];
 }
 
+const isESC = (evt) => evt.key === 'Escape';
+
 export {
   getRandomInt,
   checkStr,
-  getSignature
+  getSignature,
+  isESC
 };
