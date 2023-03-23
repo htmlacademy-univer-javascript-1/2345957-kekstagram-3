@@ -1,4 +1,4 @@
-import {checkStr} from "./until.js";
+import {checkStr} from './until.js';
 
 const form = document.querySelector('.img-upload__form');
 const reg = new RegExp('^#[а-яА-ЯA-Za-zёЁ0-9]{1,17}$');

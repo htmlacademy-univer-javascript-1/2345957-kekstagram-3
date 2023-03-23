@@ -1,4 +1,4 @@
-import {isESC} from "./until.js";
+import {isESC} from './until.js';
 
 const buttonAddPicture = document.querySelector('#upload-file');
 const buttonCancel = document.querySelector('#upload-cancel');
@@ -11,17 +11,17 @@ buttonCancel.addEventListener('click', () => {
   closeWindow();
 });
 
+const closeOnButton = (evt) => {
+  if (isESC(evt)) {
+    evt.preventDefault();
+    closeWindow();
+  }
+};
+
 function openWindow() {
   document.querySelector('.img-upload__overlay').classList.remove('hidden');
   document.body.classList.add('modal-open');
   document.addEventListener('keydown', closeOnButton);
-}
-
-const closeOnButton = (evt) => {
-  if (isESC(evt)) {
-    evt.preventDefault();
-    closeWindow()
-  }
 }
 
 function cleanForm() {
