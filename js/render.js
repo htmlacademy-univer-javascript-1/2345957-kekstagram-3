@@ -1,15 +1,14 @@
 const container = document.querySelector('.pictures');
-const usersPictureTemplate = document.querySelector('#picture').content;
-//Задание 7 часть 2
+const usersPictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 function renderingThumbnail(getObjects) {
   const usersPicturesFragment = document.createDocumentFragment();
 
-  getObjects.forEach(({url, likes, coments}) => {
+  getObjects.forEach(({url, likes, comments}) => {
     const pictureElement = usersPictureTemplate.cloneNode(true);
 
-    pictureElement.querySelector('.picture__img').textContent = url;
-    pictureElement.querySelector('.picture__likes').style.fill = likes;
-    pictureElement.querySelector('.picture__comments').style.fill = coments;
+    pictureElement.querySelector('.picture__img').src = url;
+    pictureElement.querySelector('.picture__likes').textContent = likes;
+    pictureElement.querySelector('.picture__comments').textContent = comments;
 
     usersPicturesFragment.appendChild(pictureElement);
   });

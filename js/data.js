@@ -3,7 +3,7 @@ import {getSignature, getRandomInt} from './until.js';
 function getObject(num) {
   return {
     id: num,
-    url: `photos/${num}.jpg`,
+    url: `photos/${num + 1}.jpg`,
     description: getSignature(),
     likes: getRandomInt(15, 200),
     comments: getRandomInt(0, 200),
@@ -22,3 +22,4 @@ export {
   getObject,
   getObjects
 };
+
