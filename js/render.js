@@ -1,6 +1,5 @@
 const container = document.querySelector('.pictures');
 const usersPictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
-
 function renderingThumbnail(getObjects) {
   const usersPicturesFragment = document.createDocumentFragment();
 
