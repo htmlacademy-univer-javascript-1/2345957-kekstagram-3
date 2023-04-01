@@ -3,7 +3,7 @@ import {isESC} from './until.js';
 const inputPicture = document.querySelector('#upload-file');
 const buttonCancel = document.querySelector('#upload-cancel');
 
-buttonAddPicture.addEventListener('change', () => {
+inputPicture.addEventListener('change', () => {
   openWindow();
 });
 
