@@ -1,9 +1,9 @@
 import {isESC} from './until.js';
 
-const buttonAddPicture = document.querySelector('#upload-file');
+const inputPicture = document.querySelector('#upload-file');
 const buttonCancel = document.querySelector('#upload-cancel');
 
-buttonAddPicture.addEventListener('change', () => {
+inputPicture.addEventListener('change', () => {
   openWindow();
 });
 
@@ -25,7 +25,7 @@ function openWindow() {
 }
 
 function cleanForm() {
-  buttonAddPicture.value = '';
+  inputPicture.value = '';
   document.querySelector('.text__hashtags').value = '';
   document.querySelector('.text__description').value = '';
 }
