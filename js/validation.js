@@ -1,7 +1,7 @@
 import {checkStr} from './until.js';
 
 const form = document.querySelector('.img-upload__form');
-const reg = new RegExp('^#[а-яА-ЯA-Za-zёЁ0-9]{1,17}$');
+const reg = /^#[а-яА-ЯA-Za-zёЁ0-9]{1,17}$/;
 const pristine = new Pristine(form, {
   classTo: 'img-upload__text',
   errorClass: 'form__item--invalid',
