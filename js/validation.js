@@ -1,6 +1,6 @@
 import {checkStr} from './until.js';
-import {closeWindow} from "./form.js";
-import {isFail, isSuccess} from "./check.js";
+import {closeWindow} from './form.js';
+import {isFail, isSuccess} from './check.js';
 
 const form = document.querySelector('.img-upload__form');
 const reg = /^#[а-яА-ЯA-Za-zёЁ0-9]{1,17}$/;
@@ -12,13 +12,8 @@ const pristine = new Pristine(form, {
   errorTextTag: 'span',
   errorTextClass: 'form__error',
 });
-const validateHashtag = (element) => {
-  return reg.test(element) || checkStr(element, 0);
-}
-
-const validateComment = (element) => {
-  return !checkStr(element, 19) && checkStr(element, 140);
-}
+const validateHashtag = (element) => reg.test(element) || checkStr(element, 0);
+const validateComment = (element) => !checkStr(element, 19) && checkStr(element, 140);
 
 pristine.addValidator(document.querySelector('.text__hashtags'), validateHashtag, 'Хэштег не должен привышать 17 символов и обязан начинаться с решётки!');
 pristine.addValidator(document.querySelector('.text__description'), validateComment, 'Длина комментария от 20 до 140 символов!');
@@ -27,7 +22,7 @@ form.addEventListener('submit', (evt) => {
   evt.preventDefault();
   if (pristine.validate()) {
     const data = new FormData(evt.target);
-    fetch('https://27.javascript.pages.academy/kekstagram-simpl',
+    fetch('https://27.javascript.pages.academy/kekstagram-simple',
       {
         method: 'POST',
         body: data,
@@ -41,6 +36,6 @@ form.addEventListener('submit', (evt) => {
           isFail();
           closeWindow(false);
         }
-      })
+      });
   }
 });

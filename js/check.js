@@ -1,4 +1,4 @@
-import {isESC} from "./until.js";
+import {isESC} from './until.js';
 
 const successTemplate = document.querySelector('#success').content.querySelector('.success');
 const errorTemplate = document.querySelector('#error').content.querySelector('.error');
@@ -23,13 +23,14 @@ function EscapeSuccess(evt) {
   }
 }
 
-function EscapeError(evt){
+function EscapeError(evt) {
   if (isESC(evt)) {
     evt.preventDefault();
     closeErrorElement();
   }
 }
-function isSuccess (){
+
+function isSuccess() {
   const successButton = successTemplate.querySelector('.success__button');
   document.addEventListener('keydown', EscapeSuccess);
   document.addEventListener('click', closeSuccessElement);
@@ -52,4 +53,4 @@ const isFail = () => {
   document.body.append(errorTemplate);
 };
 
-export {isSuccess, isFail}
+export {isSuccess, isFail};

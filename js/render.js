@@ -1,6 +1,6 @@
 const container = document.querySelector('.pictures');
 const usersPictureTemplate = document.querySelector('#picture').content;
-const renderingThumbnail =  (getObjects) => {
+const renderingThumbnail = (getObjects) => {
   const usersPicturesFragment = document.createDocumentFragment();
 
   getObjects.forEach(({url, likes, comments}) => {

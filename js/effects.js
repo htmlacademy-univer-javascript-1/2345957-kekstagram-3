@@ -13,10 +13,10 @@ effects.addEventListener('change', (evt) => {
 });
 
 const resetEffect = () => {
-    picture.classList.remove(`effects__preview--${previousEffect}`);
-    picture.style.filter = '';
-    previousEffect = undefined;
-    picture.style.scale = 1;
+  picture.classList.remove(`effects__preview--${previousEffect}`);
+  picture.style.filter = '';
+  previousEffect = undefined;
+  picture.style.scale = 1;
 };
 
-export {resetEffect}
+export {resetEffect};

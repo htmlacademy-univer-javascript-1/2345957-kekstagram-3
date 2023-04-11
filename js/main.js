@@ -4,5 +4,6 @@ import './form.js';
 import './validation.js';
 import './scale.js';
 import './effects.js';
-import {getPicturesFromServer} from "./api.js";
+import {getPicturesFromServer} from './api.js';
+
 getPicturesFromServer();
