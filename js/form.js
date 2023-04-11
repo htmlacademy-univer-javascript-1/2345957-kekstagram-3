@@ -4,6 +4,13 @@ import {resetEffect} from './effects.js';
 const inputPicture = document.querySelector('#upload-file');
 const buttonCancel = document.querySelector('#upload-cancel');
 
+const closeOnButton = (evt) => {
+  if (isESC(evt)) {
+    evt.preventDefault();
+    closeWindow(true);
+  }
+};
+
 const openWindow = () => {
   document.querySelector('.img-upload__overlay').classList.remove('hidden');
   document.body.classList.add('modal-open');
@@ -32,12 +39,5 @@ const closeWindow = (flag) => {
 buttonCancel.addEventListener('click', () => {
   closeWindow(true);
 });
-
-const closeOnButton = (evt) => {
-  if (isESC(evt)) {
-    evt.preventDefault();
-    closeWindow(true);
-  }
-};
 
 export {closeWindow};
