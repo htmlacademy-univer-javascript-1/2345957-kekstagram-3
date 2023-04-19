@@ -1,55 +1,57 @@
 import {isESC} from './until.js';
 
-const successTemplate = document.querySelector('#success').content.querySelector('.success');
-const errorTemplate = document.querySelector('#error').content.querySelector('.error');
+const successTemplate = document.querySelector('#success').content.querySelector('.success').cloneNode(true);
+const errorTemplate = document.querySelector('#error').content.querySelector('.error').cloneNode(true);
 
 const closeSuccessElement = () => {
-  successTemplate.classList.add('hidden');
-  document.removeEventListener('keydown', EscapeSuccess);
-  document.removeEventListener('click', closeSuccessElement);
+  document.removeEventListener('keydown', closeByEscSuccess);
+  document.removeEventListener('click', closeByClickSuccess);
+  successTemplate.remove();
 };
 
 const closeErrorElement = () => {
-  errorTemplate.classList.add('hidden');
-  document.removeEventListener('keydown', EscapeError);
-  document.querySelector('.img-upload__overlay').classList.remove('hidden');
-  document.body.classList.add('modal-open');
+  document.removeEventListener('keydown', closeByEscError);
+  document.removeEventListener('click', closeByClickError);
+  errorTemplate.remove();
 };
 
-function EscapeSuccess(evt) {
+function closeByEscSuccess(evt) {
   if (isESC(evt)) {
     evt.preventDefault();
     closeSuccessElement();
   }
 }
 
-function EscapeError(evt) {
+function closeByEscError(evt) {
   if (isESC(evt)) {
     evt.preventDefault();
     closeErrorElement();
   }
 }
 
-function isSuccess() {
-  const successButton = successTemplate.querySelector('.success__button');
-  document.addEventListener('keydown', EscapeSuccess);
-  document.addEventListener('click', closeSuccessElement);
-  successButton.addEventListener('click', () => {
-    closeSuccessElement();
-  });
-  document.body.append(successTemplate);
+function closeByClickSuccess(evt) {
+  evt.preventDefault();
+  closeSuccessElement();
 }
+
+function closeByClickError(evt) {
+  evt.preventDefault();
+  closeErrorElement();
+}
+
+const isSuccess = () => {
+  const successButton = successTemplate.querySelector('.success__button');
+  document.addEventListener('keydown', closeByEscSuccess);
+  document.addEventListener('click', closeByClickSuccess);
+  successButton.addEventListener('click', closeSuccessElement);
+  document.body.append(successTemplate);
+};
 
 const isFail = () => {
   const errorButton = errorTemplate.querySelector('.error__button');
-  document.addEventListener('keydown', EscapeError);
-  document.addEventListener('click', closeErrorElement);
-  errorButton.addEventListener('click', () => {
-    closeErrorElement();
-  });
-  document.querySelector('.img-upload__overlay').classList.add('hidden');
-  document.body.classList.remove('modal-open');
-
+  document.addEventListener('keydown', closeByEscError);
+  document.addEventListener('click', closeByClickError);
+  errorButton.addEventListener('click', closeErrorElement);
   document.body.append(errorTemplate);
 };
 

@@ -1,6 +1,5 @@
 import {checkStr} from './until.js';
-import {closeWindow} from './form.js';
-import {isFail, isSuccess} from './check.js';
+import {sendData} from './api.js';
 
 const form = document.querySelector('.img-upload__form');
 const reg = /^#[а-яА-ЯA-Za-zёЁ0-9]{1,17}$/;
@@ -21,21 +20,6 @@ pristine.addValidator(document.querySelector('.text__description'), validateComm
 form.addEventListener('submit', (evt) => {
   evt.preventDefault();
   if (pristine.validate()) {
-    const data = new FormData(evt.target);
-    fetch('https://27.javascript.pages.academy/kekstagram-simple',
-      {
-        method: 'POST',
-        body: data,
-      },
-    )
-      .then((ans) => {
-        if (ans.ok) {
-          isSuccess();
-          closeWindow(true);
-        } else {
-          isFail();
-          closeWindow(false);
-        }
-      });
+    sendData(evt);
   }
 });

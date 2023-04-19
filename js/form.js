@@ -19,13 +19,14 @@ const cleanForm = () => {
   document.querySelector('.text__hashtags').value = '';
   document.querySelector('.text__description').value = '';
   resetEffect();
+  document.querySelector('.scale__control--value').value = '100%';
 };
 
-const closeWindow = (flag) => {
+const closeWindow = (needToClean) => {
   document.querySelector('.img-upload__overlay').classList.add('hidden');
   document.body.classList.remove('modal-open');
   document.removeEventListener('keydown', closeOnButton);
-  if (flag) {
+  if (needToClean) {
     cleanForm();
   }
 };
