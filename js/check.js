@@ -1,4 +1,5 @@
 import {isESC} from './until.js';
+import {openWindow} from './form.js';
 
 const successTemplate = document.querySelector('#success').content.querySelector('.success').cloneNode(true);
 const errorTemplate = document.querySelector('#error').content.querySelector('.error').cloneNode(true);
@@ -13,6 +14,7 @@ const closeErrorElement = () => {
   document.removeEventListener('keydown', closeByEscError);
   document.removeEventListener('click', closeByClickError);
   errorTemplate.remove();
+  openWindow();
 };
 
 function closeByEscSuccess(evt) {

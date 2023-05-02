@@ -42,4 +42,4 @@ buttonCancel.addEventListener('click', () => {
   closeWindow(true);
 });
 
-export {closeWindow};
+export {closeWindow, openWindow};
