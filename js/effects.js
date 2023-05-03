@@ -1,5 +1,7 @@
 const effects = document.querySelector('.effects__list');
 const picture = document.querySelector('.img-upload__preview');
+let previousEffect = 'none';
+const  effectNone = document.querySelector('#effect-none');
 
 effects.addEventListener('change', (evt) => {
   for (const className of picture.classList) {
@@ -8,4 +10,15 @@ effects.addEventListener('change', (evt) => {
     }
   }
   picture.classList.add(`effects__preview--${evt.target.value}`);
+  previousEffect = evt.target.value;
 });
+
+const resetEffect = () => {
+  picture.classList.remove(`effects__preview--${previousEffect}`);
+  picture.style.filter = '';
+  previousEffect = undefined;
+  picture.style.scale = 1;
+  effectNone.checked = true;
+};
+
+export {resetEffect};

@@ -1,10 +1,9 @@
-import './data.js';
 import './until.js';
 import './render.js';
-import {getObjects} from './data.js';
-import {renderingThumbnail} from './render.js';
 import './form.js';
 import './validation.js';
 import './scale.js';
 import './effects.js';
-renderingThumbnail(getObjects(25));
+import {getPicturesFromServer} from './api.js';
+
+getPicturesFromServer();
